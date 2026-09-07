@@ -1,0 +1,11 @@
+{
+  "name": "LexiTranscribe",
+  "description": "Elegant Dark AI transcription, video understanding, live voice conversation, and video generation platform powered by Gemini.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

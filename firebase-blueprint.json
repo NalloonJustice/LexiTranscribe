@@ -1,0 +1,52 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "timestamp" },
+        "tier": { "type": "string" }
+      }
+    },
+    "TranscriptProject": {
+      "collection": "users/{userId}/transcripts",
+      "fields": {
+        "fileName": { "type": "string" },
+        "fileSize": { "type": "string" },
+        "duration": { "type": "string" },
+        "format": { "type": "string" },
+        "status": { "type": "string" },
+        "progress": { "type": "number" },
+        "currentStep": { "type": "string" },
+        "model": { "type": "string" },
+        "fullText": { "type": "string" },
+        "segments": { "type": "array" },
+        "aiInsights": { "type": "object" },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "ChatMessage": {
+      "collection": "users/{userId}/chats",
+      "fields": {
+        "role": { "type": "string" },
+        "content": { "type": "string" },
+        "model": { "type": "string" },
+        "systemInstruction": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "VideoItem": {
+      "collection": "users/{userId}/videos",
+      "fields": {
+        "prompt": { "type": "string" },
+        "aspectRatio": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "status": { "type": "string" },
+        "analysis": { "type": "object" },
+        "createdAt": { "type": "timestamp" }
+      }
+    }
+  }
+}

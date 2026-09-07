@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #020617;
+    --card-bg: #0f172a;
+    --card-border: #1e293b;
+    --card-hover: #334155;
+    --accent-sky: #38bdf8;
+    --accent-emerald: #10b981;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-subtle: #64748b;
+  }
+
+  body {
+    background-color: #020617;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Smooth Interactive Press & Transitions for all Buttons, Links & Interactive Elements */
+button,
+a,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+.clickable {
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              color 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+/* Fluid, spring-damped press down response when clicked/pressed */
+button:active:not(:disabled),
+a:active,
+[role="button"]:active:not([aria-disabled="true"]),
+.clickable:active {
+  transform: scale(0.96) translateY(1px);
+  filter: brightness(0.95);
+}
+
+/* Subtle smooth hover lift for prominent buttons */
+button:hover:not(:disabled):not(:active),
+a:hover:not(:active) {
+  transition-duration: 0.15s;
+}
+
+/* View transition container animations */
+@keyframes viewFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-transition-enter {
+  animation: viewFadeIn 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Ripple/click press ripple effect */
+.press-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.press-glow:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 10%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.press-glow:active:after {
+  opacity: 1;
+  transition: opacity 0.05s ease;
+}
+
+/* Elegant Dark Refined Accents */
+.text-accent-sky {
+  color: #38bdf8;
+}
+
+.text-accent-emerald {
+  color: #10b981;
+}
+
+.glow-box-sky {
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.8), 0 0 15px -3px rgba(56, 189, 248, 0.15);
+  border: 1px solid #1e293b;
+}
+
+.glow-box-emerald {
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.8), 0 0 15px -3px rgba(16, 185, 129, 0.15);
+  border: 1px solid #1e293b;
+}
+
+.card-dark {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+.status-dot-sky {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+/* Progress Bar */
+.progress-bar-elegant {
+  background-color: #1e293b;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill-elegant {
+  background: linear-gradient(90deg, #0284c7 0%, #38bdf8 100%);
+  border-radius: 9999px;
+  transition: width 0.4s ease-out;
+}
+
+/* Subtle Slate Grid background */
+.grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(30, 41, 59, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 41, 59, 0.35) 1px, transparent 1px);
+}
+
+/* Custom scrollbar for Elegant Dark */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
